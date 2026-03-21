@@ -3,7 +3,14 @@
 import { useMemo, useState } from "react";
 
 type ApiResp =
-  | { ok: true; cached: boolean; slug: string; hash: string; model: string; summary: { bullets: string[]; conclusion: string } }
+  | {
+      ok: true;
+      cached: boolean;
+      slug: string;
+      hash: string;
+      model: string;
+      summary: { bullets: string[]; conclusion: string };
+    }
   | { ok: false; error: string };
 
 export default function SummaryBox({ slug }: { slug: string }) {
@@ -31,29 +38,29 @@ export default function SummaryBox({ slug }: { slug: string }) {
   }
 
   return (
-    <div className="rounded-xl border bg-white p-5">
+    <div className="rounded-3xl border border-sky-100 bg-white/70 p-6 shadow-sm backdrop-blur">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <div className="text-sm font-semibold">AI 摘要</div>
+          <div className="text-sm font-semibold text-slate-900">AI 摘要</div>
           {data && data.ok ? (
-            <div className="mt-1 text-xs text-zinc-500">
+            <div className="mt-1 text-xs text-slate-500">
               model: {data.model} · {data.cached ? "cached" : "fresh"}
             </div>
           ) : (
-            <div className="mt-1 text-xs text-zinc-500">点击生成（结果会缓存）</div>
+            <div className="mt-1 text-xs text-slate-500">点击生成（结果会缓存，省钱）</div>
           )}
         </div>
 
         <div className="flex gap-2">
           <button
-            className="rounded-lg bg-zinc-900 px-3 py-2 text-sm text-white hover:bg-zinc-800 disabled:opacity-60"
+            className="rounded-xl bg-sky-600 px-3 py-2 text-sm font-medium text-white shadow-sm hover:bg-sky-700 disabled:opacity-60"
             onClick={() => run(false)}
             disabled={loading}
           >
             {loading ? "生成中…" : "生成摘要"}
           </button>
           <button
-            className="rounded-lg border px-3 py-2 text-sm hover:bg-zinc-50 disabled:opacity-60"
+            className="rounded-xl border border-sky-200 bg-white/60 px-3 py-2 text-sm font-medium text-sky-800 hover:bg-sky-50 disabled:opacity-60"
             onClick={() => run(true)}
             disabled={loading}
           >
@@ -66,13 +73,13 @@ export default function SummaryBox({ slug }: { slug: string }) {
 
       {data && data.ok ? (
         <div className="mt-4 space-y-3">
-          <ul className="list-disc space-y-1 pl-5 text-sm">
+          <ul className="list-disc space-y-1 pl-5 text-sm text-slate-700">
             {bullets.map((b, idx) => (
               <li key={idx}>{b}</li>
             ))}
           </ul>
-          <div className="rounded-lg bg-zinc-50 p-3 text-sm">
-            <span className="font-semibold">结论：</span>
+          <div className="rounded-2xl bg-sky-50 p-4 text-sm text-slate-800 ring-1 ring-inset ring-sky-100">
+            <span className="font-semibold text-sky-900">结论：</span>
             {data.summary.conclusion}
           </div>
         </div>
