@@ -1,0 +1,16 @@
+{
+  "slug": "openclaw-browser-automation-247",
+  "hash": "608dc77c5de8e240",
+  "model": "deepseek-chat",
+  "summary": {
+    "bullets": [
+      "介绍OpenClaw浏览器自动化四种方案",
+      "从轻量webfetch入门信息抓取",
+      "学习搜索复用API技能市场",
+      "需要强交互时使用浏览器自动化",
+      "目标是实现24/7长期网络执行"
+    ],
+    "conclusion": "视频介绍了从入门到实现24/7运行的浏览器自动化学习路径。"
+  },
+  "createdAt": "2026-03-21T08:38:18.273Z"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "hello-world",
+  "hash": "f970a10855b484a7",
+  "model": "deepseek-chat",
+  "summary": {
+    "bullets": [
+      "文章页有生成摘要按钮",
+      "点击调用DeepSeek API",
+      "生成摘要后缓存本地",
+      "示例文章说明功能",
+      "操作流程简单明了"
+    ],
+    "conclusion": "文章介绍了生成摘要功能的操作流程。"
+  },
+  "createdAt": "2026-03-21T08:22:53.951Z"
+}
