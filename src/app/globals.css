@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f0f9ff; /* sky-50 */
-  --foreground: #0f172a; /* slate-900 */
+  --background: #f8fafc;
+  --foreground: #0f172a;
 }
 
 @theme inline {
@@ -12,15 +12,138 @@
   --font-mono: var(--font-geist-mono);
 }
 
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: radial-gradient(1200px 600px at 20% 0%, #dbeafe 0%, transparent 60%),
-    radial-gradient(900px 500px at 90% 20%, #bae6fd 0%, transparent 55%),
-    var(--background);
+  margin: 0;
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
   color: var(--foreground);
   font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
 }
 
 ::selection {
-  background: #93c5fd;
+  background: #bae6fd;
+  color: #0f172a;
+}
+
+.docs-sidebar {
+  max-height: calc(100vh - 3rem);
+  overflow: auto;
+}
+
+.docs-prose {
+  color: #0f172a;
+  line-height: 1.8;
+}
+
+.docs-prose > :first-child {
+  margin-top: 0;
+}
+
+.docs-prose h1,
+.docs-prose h2,
+.docs-prose h3,
+.docs-prose h4 {
+  scroll-margin-top: 96px;
+  letter-spacing: -0.02em;
+}
+
+.docs-prose h1 {
+  font-size: 2rem;
+  margin: 0 0 1rem;
+}
+
+.docs-prose h2 {
+  font-size: 1.5rem;
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.docs-prose h3 {
+  font-size: 1.2rem;
+  margin: 2rem 0 0.75rem;
+}
+
+.docs-prose p,
+.docs-prose ul,
+.docs-prose ol,
+.docs-prose blockquote,
+.docs-prose pre {
+  margin: 1rem 0;
+}
+
+.docs-prose ul,
+.docs-prose ol {
+  padding-left: 1.5rem;
+}
+
+.docs-prose li + li {
+  margin-top: 0.35rem;
+}
+
+.docs-prose a {
+  color: #0369a1;
+  text-decoration: underline;
+  text-decoration-color: #7dd3fc;
+  text-underline-offset: 3px;
+}
+
+.docs-prose code {
+  border-radius: 0.5rem;
+  background: #f1f5f9;
+  padding: 0.15rem 0.4rem;
+  font-size: 0.875em;
+}
+
+.docs-prose pre {
+  overflow-x: auto;
+  border-radius: 1rem;
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 1rem 1.1rem;
+}
+
+.docs-prose pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+.docs-prose blockquote {
+  border-left: 4px solid #7dd3fc;
+  background: #f8fafc;
+  padding: 0.75rem 1rem;
+  color: #475569;
+}
+
+.docs-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 0.75rem;
+}
+
+.docs-prose th,
+.docs-prose td {
+  border: 1px solid #e2e8f0;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.docs-prose th {
+  background: #f8fafc;
+}
+
+.docs-prose hr {
+  margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid #e2e8f0;
 }

@@ -2,6 +2,9 @@
 title: "飞书机器人配置笔记（原文存档）"
 date: "2026-03-25"
 tags: ["Feishu", "OpenClaw", "笔记", "Vercel"]
+section: "飞书集成"
+order: 1
+description: "记录如何创建 OpenClaw 专用飞书机器人、绑定 agent、验证是否已成功写入网站并推送到 Vercel。"
 ---
 
 # 流程
