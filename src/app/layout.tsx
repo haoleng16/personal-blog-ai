@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "我的淡蓝小站",
-  description: "个人博客（Markdown）+ DeepSeek AI 摘要",
+  title: "木木的小站",
+  description: "木木的小站：Markdown 文档、博客文章与 AI 摘要",
 };
 
 export default function RootLayout({
@@ -24,8 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="zh-CN"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
