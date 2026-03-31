@@ -41,20 +41,20 @@ export default function SummaryBox({ slug }: { slug: string }) {
     <div className="rounded-[1.75rem] border border-[var(--border)] bg-[var(--surface)] p-6 shadow-sm">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <div className="editorial-kicker text-[var(--muted-foreground)]">Reading Assistant</div>
+          <div className="editorial-kicker text-[var(--muted-foreground)]">AI Layer</div>
           <div className="mt-2 text-lg font-semibold tracking-[-0.03em] text-[var(--foreground)]">内容摘要</div>
           {data && data.ok ? (
             <div className="mt-1 text-xs text-[var(--muted-foreground)]">
               model: {data.model} · {data.cached ? "cached" : "fresh"}
             </div>
           ) : (
-            <div className="mt-1 text-xs text-[var(--muted-foreground)]">需要时再生成，避免把页面做成 AI 工具广告牌。</div>
+            <div className="mt-1 text-xs text-[var(--muted-foreground)]">按需生成，不让 AI 组件抢掉内容本身的视觉主导权。</div>
           )}
         </div>
 
         <div className="flex gap-2">
           <button
-            className="rounded-full border border-[var(--accent)] bg-[var(--accent)] px-4 py-2 text-sm font-medium text-white transition hover:opacity-95 disabled:opacity-60"
+            className="rounded-full border border-[var(--accent)] bg-[var(--accent)] px-4 py-2 text-sm font-medium text-slate-950 transition hover:brightness-110 disabled:opacity-60"
             onClick={() => run(false)}
             disabled={loading}
           >
@@ -70,7 +70,7 @@ export default function SummaryBox({ slug }: { slug: string }) {
         </div>
       </div>
 
-      {data && !data.ok ? <div className="mt-4 text-sm text-red-600">{data.error}</div> : null}
+      {data && !data.ok ? <div className="mt-4 text-sm text-red-400">{data.error}</div> : null}
 
       {data && data.ok ? (
         <div className="mt-5 space-y-4">

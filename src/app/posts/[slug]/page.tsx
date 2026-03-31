@@ -46,7 +46,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               <header className="panel-glass rounded-[2rem] border border-[var(--border)] p-6 sm:p-8 lg:p-10">
                 <div className="flex flex-wrap items-start justify-between gap-4">
                   <div>
-                    <div className="editorial-kicker text-[var(--muted-foreground)]">Article Detail</div>
+                    <div className="editorial-kicker text-[var(--muted-foreground)]">Article Node</div>
                     <div className="mt-3 flex flex-wrap items-center gap-3 text-sm text-[var(--muted-foreground)]">
                       <Link href="/" className="font-medium text-[var(--foreground)] hover:text-[var(--accent)]">
                         木木的小站
@@ -65,10 +65,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                 {post.frontmatter.tags?.length ? (
                   <div className="mt-5 flex flex-wrap gap-2">
                     {post.frontmatter.tags.map((t) => (
-                      <span
-                        key={t}
-                        className="rounded-full border border-[var(--border)] bg-[var(--surface-muted)] px-3 py-1 text-xs text-[var(--foreground)]"
-                      >
+                      <span key={t} className="rounded-full border border-[var(--border)] bg-[var(--surface-muted)] px-3 py-1 text-xs text-[var(--foreground)]">
                         {t}
                       </span>
                     ))}

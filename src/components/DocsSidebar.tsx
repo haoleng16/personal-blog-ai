@@ -8,12 +8,12 @@ export default function DocsSidebar({ currentSlug }: { currentSlug?: string }) {
   return (
     <aside className="docs-sidebar panel-glass rounded-[2rem] border border-[var(--border)] p-4 sm:p-5">
       <div className="border-b border-[var(--border)] px-2 pb-4">
-        <div className="editorial-kicker text-[var(--muted-foreground)]">Private Archive</div>
+        <div className="editorial-kicker text-[var(--muted-foreground)]">System Index</div>
         <Link href="/" className="mt-3 block text-2xl font-semibold tracking-[-0.05em] text-[var(--foreground)]">
           木木的小站
         </Link>
         <p className="mt-2 text-sm leading-6 text-[var(--muted-foreground)]">
-          不是工具面板，而是个人内容馆。侧栏像目录页，负责让信息更安静地展开。
+          科技风首页，冷色调、模块化、偏产品感。侧栏负责稳定导航与快速定位。
         </p>
       </div>
 
@@ -49,7 +49,7 @@ export default function DocsSidebar({ currentSlug }: { currentSlug?: string }) {
                       className={[
                         "block rounded-[1rem] border px-3 py-3 text-sm transition",
                         active
-                          ? "border-[var(--accent)] bg-[var(--surface-muted)] text-[var(--foreground)] shadow-[inset_0_0_0_1px_color-mix(in_srgb,var(--accent)_25%,transparent)]"
+                          ? "border-[var(--accent)] bg-[var(--surface-muted)] text-[var(--foreground)] shadow-[0_0_0_1px_color-mix(in_srgb,var(--accent)_18%,transparent),0_0_20px_rgba(83,166,255,0.12)]"
                           : "border-transparent text-[var(--muted-foreground)] hover:border-[var(--border)] hover:bg-[var(--surface-muted)] hover:text-[var(--foreground)]",
                       ].join(" ")}
                     >
