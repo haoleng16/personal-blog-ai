@@ -29,19 +29,19 @@ export default function ThemeToggle() {
   }
 
   return (
-    <div className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] p-1 shadow-sm">
+    <div className="inline-flex items-center gap-1 rounded-full border border-[var(--border)] bg-[var(--surface)] p-1.5 shadow-sm backdrop-blur">
       <button
         type="button"
         onClick={() => handleChange("light")}
         className={[
           "rounded-full px-3 py-1.5 text-sm transition",
           ready && theme === "light"
-            ? "bg-sky-600 text-white"
+            ? "bg-[var(--foreground)] text-[var(--background)]"
             : "text-[var(--muted-foreground)] hover:bg-[var(--surface-muted)] hover:text-[var(--foreground)]",
         ].join(" ")}
         aria-pressed={theme === "light"}
       >
-        亮色
+        亮
       </button>
       <button
         type="button"
@@ -49,12 +49,12 @@ export default function ThemeToggle() {
         className={[
           "rounded-full px-3 py-1.5 text-sm transition",
           ready && theme === "dark"
-            ? "bg-slate-900 text-white dark:bg-sky-400 dark:text-slate-950"
+            ? "bg-[var(--accent)] text-[#1a1209]"
             : "text-[var(--muted-foreground)] hover:bg-[var(--surface-muted)] hover:text-[var(--foreground)]",
         ].join(" ")}
         aria-pressed={theme === "dark"}
       >
-        暗色
+        暗
       </button>
     </div>
   );
